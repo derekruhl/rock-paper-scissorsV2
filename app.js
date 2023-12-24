@@ -1,7 +1,12 @@
 // function for computer to randomly select choice
 
 function getComputerChoice() {
-
+  let computerSelection = Math.floor(Math.random() * 4);
+  if (computerSelection == 1) {
+    return 'rock';
+  } else if (computerSelection == 2) {
+    return 'paper';
+  } else return 'scissors';
 }
 
 // option for player to select choice
