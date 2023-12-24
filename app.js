@@ -8,12 +8,18 @@ function getComputerChoice() {
 
 // function that plays a single round
 
-function playRPS(param1, param2) {
-    if (param1 == 'rock' && param2 == 'scissors') {
+function playRPS(playerSelection, computerSelection) {
+    if (playerSelection == 'rock' && pcomputerSelection == 'scissors') {
         return 'rock beat scissors!'
-    } else if (para1 == 'scissors' && para2 == 'paper') {
+    } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
         return 'scissors beat paper!'
-    } else if (para1 == 'paper' && param2 == 'rock') {
+    } else if (playerSelection == 'paper' && computerSelection == 'rock') {
+        return 'paper beats rock!'
+    } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
+        return 'rock beat scissors!'
+    } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
+        return 'scissors beat paper!'
+    } else if (playerSelection == 'rock' && computerSelection == 'paper') {
         return 'paper beats rock!'
     } else return "it's a tie"
 };
