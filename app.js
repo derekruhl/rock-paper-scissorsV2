@@ -1,21 +1,22 @@
 // function for computer to randomly select choice
 
-function getComputerChoice() {
+let computerSelection = function getComputerChoice() {
   let computerSelection = Math.floor(Math.random() * 4);
   if (computerSelection == 1) {
     return 'rock';
   } else if (computerSelection == 2) {
     return 'paper';
   } else return 'scissors';
-}
+};
 
 // option for player to select choice
 
-function getPlayerChoice() {
+let playerSelection = function getPlayerChoice() {
     window.prompt('please select a choice: rock, paper, or scissors');
 };
 
-getPlayerChoice();
+playerSelection();
+computerSelection();
 
 // function that plays a single round
 
@@ -34,6 +35,8 @@ function playRPS(playerSelection, computerSelection) {
         return 'paper beats rock!'
     } else return "it's a tie"
 };
+
+playRPS(playerSelection, computerSelection);
 
 // function to keep score for best of 5
 
