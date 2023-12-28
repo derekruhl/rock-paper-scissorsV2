@@ -15,13 +15,10 @@ let playerSelection = function getPlayerChoice() {
     window.prompt('please select a choice: rock, paper, or scissors');
 };
 
-playerSelection();
-computerSelection();
-
 // function that plays a single round
 
 function playRPS(playerSelection, computerSelection) {
-    if (playerSelection == 'rock' && pcomputerSelection == 'scissors') {
+    if (playerSelection == 'rock' && computerSelection == 'scissors') {
         return 'rock beat scissors!'
     } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
         return 'scissors beat paper!'
@@ -36,13 +33,12 @@ function playRPS(playerSelection, computerSelection) {
     } else return "it's a tie"
 };
 
-playRPS(playerSelection, computerSelection);
+playRPS(playerSelection(), computerSelection());
 
 // function to keep score for best of 5
-
-// rules for winning
 
 const currentTurn = 0;
 let playerTurn = 0;
 let computerTurn = 0;
 
+// rules for winning
