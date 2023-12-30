@@ -12,8 +12,8 @@ let computerSelection = function getComputerChoice() {
 // option for player to select choice
 
 let playerSelection = function getPlayerChoice() {
-    window.prompt('please select a choice: rock, paper, or scissors');
-    return;
+    return window.prompt('please select a choice: rock, paper, or scissors');
+    
 };
 
 // function that plays a single round
