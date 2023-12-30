@@ -1,7 +1,7 @@
 // function for computer to randomly select choice
 
 let computerSelection = function getComputerChoice() {
-  let computerSelection = Math.floor(Math.random() * 4);
+  let computerSelection = Math.floor(Math.random() * 3);
   if (computerSelection == 1) {
     return 'rock';
   } else if (computerSelection == 2) {
@@ -13,6 +13,7 @@ let computerSelection = function getComputerChoice() {
 
 let playerSelection = function getPlayerChoice() {
     window.prompt('please select a choice: rock, paper, or scissors');
+    return;
 };
 
 // function that plays a single round
