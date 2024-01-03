@@ -35,6 +35,10 @@ function playRPS(playerSelection, computerSelection) {
 };
 
 playRPS(playerSelection(), computerSelection());
+playRPS(playerSelection(), computerSelection());
+playRPS(playerSelection(), computerSelection());
+playRPS(playerSelection(), computerSelection());
+playRPS(playerSelection(), computerSelection());
 
 // function to keep score for best of 5
 
