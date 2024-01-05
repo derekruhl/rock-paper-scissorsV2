@@ -1,7 +1,7 @@
 // function for computer to randomly select choice
 
 let computerSelection = function getComputerChoice() {
-  let computerSelection = Math.floor(Math.random() * 0);
+  let computerSelection = Math.floor(Math.random() * 3);
   if (computerSelection == 1) {
     return 'rock';
   } else if (computerSelection == 2) {
