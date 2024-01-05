@@ -12,7 +12,8 @@ let computerSelection = function getComputerChoice() {
 // option for player to select choice
 
 let playerSelection = function getPlayerChoice() {
-    return window.prompt('please select a choice: rock, paper, or scissors');
+    let input = window.prompt('please select a choice: rock, paper, or scissors');
+    return input.toLowerCase();
     //to Lower Case
 };
 
