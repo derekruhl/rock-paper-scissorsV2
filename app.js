@@ -1,13 +1,14 @@
 // function for computer to randomly select choice
 
 let computerSelection = function getComputerChoice() {
-  let computerSelection = Math.floor(Math.random() * 3);
+  let computerSelection = Math.floor(Math.random() * 0);
   if (computerSelection == 1) {
     return 'rock';
   } else if (computerSelection == 2) {
     return 'paper';
   } else return 'scissors';
 };
+console.log(computerSelection());
 
 // option for player to select choice
 
@@ -32,19 +33,36 @@ function playRPS(playerSelection, computerSelection) {
         return 'Computer wins! scissors beat paper!'
     } else if (playerSelection == 'rock' && computerSelection == 'paper') {
         return 'Computer wins! paper beats rock!'
-    } else return "it's a tie"
-};
+    } else 'it\'s a tie'
+}
 
 playRPS(playerSelection(), computerSelection());
-playRPS(playerSelection(), computerSelection());
-playRPS(playerSelection(), computerSelection());
-playRPS(playerSelection(), computerSelection());
-playRPS(playerSelection(), computerSelection());
+
+
 
 // function to keep score for best of 5
 
-const currentTurn = 0;
-let playerTurn = 0;
-let computerTurn = 0;
+let playerScore = 0;
+let computerScore = 0;
 
-// rules for winning
+while (playerScore < 3 && computerScore < 3) {
+    let playerChoice = playerSelection();
+    let computerChoice = computerSelection();
+  
+    let result = playRPS(playerChoice, computerChoice);
+    console.log(result);
+  
+    if (result.includes('Player wins')) {
+      playerScore++;
+    } else if (result.includes('Computer wins')) {
+      computerScore++;
+    }
+  }
+  
+  // print the overall winner
+  if (playerScore === 3) {
+    console.log('Player is the big Winner!');
+  } else {
+    console.log('Computer is the big winner!');
+  }
+  
