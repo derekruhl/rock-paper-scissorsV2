@@ -40,29 +40,3 @@ playRPS(playerSelection(), computerSelection());
 
 
 
-// function to keep score for best of 5
-
-let playerScore = 0;
-let computerScore = 0;
-
-while (playerScore < 3 && computerScore < 3) {
-    let playerChoice = playerSelection();
-    let computerChoice = computerSelection();
-  
-    let result = playRPS(playerChoice, computerChoice);
-    console.log(result);
-  
-    if (result.includes('Player wins')) {
-      playerScore++;
-    } else if (result.includes('Computer wins')) {
-      computerScore++;
-    }
-  }
-  
-  // print the overall winner
-  if (playerScore === 3) {
-    console.log('Player is the big Winner!');
-  } else {
-    console.log('Computer is the big winner!');
-  }
-  
