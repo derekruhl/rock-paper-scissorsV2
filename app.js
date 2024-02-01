@@ -15,8 +15,9 @@ console.log(computerSelection());
 let playerSelection = function getPlayerChoice() {
     let input = window.prompt('please select a choice: rock, paper, or scissors');
     return input.toLowerCase();
-    //to Lower Case
-};
+    };
+
+console.log(playerSelection());
 
 // function that plays a single round
 
@@ -43,3 +44,25 @@ const rockBtn = document.querySelector('.rock');
 const paperBtn = document.querySelector('.paper');
 const scissorsBtn = document.querySelector('.scissors');
 
+rockBtn.addEventListener('click', () => {
+    playRPS(playerSelection('rock'), computerSelection());
+});
+
+paperBtn.addEventListener('click', () => {
+    playRPS(playerSelection('paper'), computerSelection());
+});
+
+scissorsBtn.addEventListener('click', () => {
+    playRPS(playerSelection('scissors'), computerSelection());
+});
+
+
+
+// message display
+
+<div class="display-message">
+
+</div>
+
+// appendChild??
+// div.textContent = "the winner is ${'...'}"
