@@ -38,5 +38,8 @@ function playRPS(playerSelection, computerSelection) {
 
 playRPS(playerSelection(), computerSelection());
 
-
+// UI
+const rockBtn = document.querySelector('.rock');
+const paperBtn = document.querySelector('.paper');
+const scissorsBtn = document.querySelector('.scissors');
 
