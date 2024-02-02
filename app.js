@@ -43,26 +43,57 @@ playRPS(playerSelection(), computerSelection());
 const rockBtn = document.querySelector('.rock');
 const paperBtn = document.querySelector('.paper');
 const scissorsBtn = document.querySelector('.scissors');
-const playerScore = document.querySelector('player-score');
-const computerScore = document.querySelector('computer-score');
+const playerScoreDisplay = document.querySelector('player-score');
+const computerScoreDisplay = document.querySelector('computer-score');
 const displayMessage = document.querySelector('display-message');
+
+let playerScore = 0;
+let computerScore = 0;
 
 
 rockBtn.addEventListener('click', () => {
-    playRPS('rock', computerSelection());
+    let result = playRPS('rock', computerSelection());
+    displayMessage.textContent = result;
+
+    //logic for keeping score
+
+  if (playRPS().includes('Player wins!')) {
+    div.textContent = 'The winner is Player!';
+  } else div.textContent = 'The winner is Computer!';
+
+  updateScore();
 });
 
 paperBtn.addEventListener('click', () => {
-    playRPS('paper', computerSelection());
+    let result = playRPS('paper', computerSelection());
+    displayMessage.textContent = result;
+
+    //logic for keeping score
+
+  if (playRPS().includes('Player wins!')) {
+    div.textContent = 'The winner is Player!';
+  } else div.textContent = 'The winner is Computer!';
+
+  updateScore();
 });
 
 scissorsBtn.addEventListener('click', () => {
-    playRPS('scissors', computerSelection());
+    let result = playRPS('scissors', computerSelection());
+    displayMessage.textContent = result;
+
+    //logic for keeping score
+
+  if (playRPS().includes('Player wins!')) {
+    div.textContent = 'The winner is Player!';
+  } else div.textContent = 'The winner is Computer!';
+
+  updateScore();
 });
 
-//logic for keeping score
 
-if (playRPS().includes('Player wins!')) {
-    div.textContent = 'The winner is Player!' && playerScore++;
-} else div.textContent = 'The winner is Computer!' && computerScore++;
 
+function updateScore() {
+  if (result.includes('Player wins!')) {
+    return playerScore++;
+  } else return computerScore++;
+};
