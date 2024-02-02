@@ -43,9 +43,9 @@ playRPS(playerSelection(), computerSelection());
 const rockBtn = document.querySelector('.rock');
 const paperBtn = document.querySelector('.paper');
 const scissorsBtn = document.querySelector('.scissors');
-const playerScoreDisplay = document.querySelector('player-score');
-const computerScoreDisplay = document.querySelector('computer-score');
-const displayMessage = document.querySelector('display-message');
+const playerScoreDisplay = document.querySelector('.player-score');
+const computerScoreDisplay = document.querySelector('.computer-score');
+const displayMessage = document.querySelector('.display-message');
 
 let playerScore = 0;
 let computerScore = 0;
@@ -57,9 +57,9 @@ rockBtn.addEventListener('click', () => {
 
     //logic for keeping score
 
-  if (playRPS().includes('Player wins!')) {
-    div.textContent = 'The winner is Player!';
-  } else div.textContent = 'The winner is Computer!';
+  if (result.includes('Player wins!')) {
+    displayMessage.textContent = 'The winner is Player!';
+  } else displayMessage.textContent = 'The winner is Computer!';
 
   updateScore();
 });
@@ -70,9 +70,9 @@ paperBtn.addEventListener('click', () => {
 
     //logic for keeping score
 
-  if (playRPS().includes('Player wins!')) {
-    div.textContent = 'The winner is Player!';
-  } else div.textContent = 'The winner is Computer!';
+    if (result.includes('Player wins!')) {
+        displayMessage.textContent = 'The winner is Player!';
+      } else displayMessage.textContent = 'The winner is Computer!';
 
   updateScore();
 });
@@ -83,9 +83,9 @@ scissorsBtn.addEventListener('click', () => {
 
     //logic for keeping score
 
-  if (playRPS().includes('Player wins!')) {
-    div.textContent = 'The winner is Player!';
-  } else div.textContent = 'The winner is Computer!';
+    if (result.includes('Player wins!')) {
+        displayMessage.textContent = 'The winner is Player!';
+      } else displayMessage.textContent = 'The winner is Computer!';
 
   updateScore();
 });
@@ -93,7 +93,6 @@ scissorsBtn.addEventListener('click', () => {
 
 
 function updateScore() {
-  if (result.includes('Player wins!')) {
-    return playerScore++;
-  } else return computerScore++;
+  playerScoreDisplay.textContent = `Player score: ${playerScore}`;
+  computerScoreDisplay.textContent = `Computer score: ${computerScore}`;
 };
