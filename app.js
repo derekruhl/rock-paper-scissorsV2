@@ -45,24 +45,20 @@ const paperBtn = document.querySelector('.paper');
 const scissorsBtn = document.querySelector('.scissors');
 
 rockBtn.addEventListener('click', () => {
-    playRPS(playerSelection('rock'), computerSelection());
+    playRPS('rock', computerSelection());
 });
 
 paperBtn.addEventListener('click', () => {
-    playRPS(playerSelection('paper'), computerSelection());
+    playRPS('paper', computerSelection());
 });
 
 scissorsBtn.addEventListener('click', () => {
-    playRPS(playerSelection('scissors'), computerSelection());
+    playRPS('scissors', computerSelection());
 });
 
 
-
-// message display
-
-<div class="display-message">
-
-</div>
+const playerScore = document.querySelector('.player-score');
+const computerScore = document.querySelector('.computer-score')
 
 // appendChild??
 // div.textContent = "the winner is ${'...'}"
