@@ -12,12 +12,12 @@ console.log(computerSelection());
 
 // option for player to select choice
 
-let playerSelection = function getPlayerChoice() {
-    let input = window.prompt('please select a choice: rock, paper, or scissors');
-    return input.toLowerCase();
-    };
+// let playerSelection = function getPlayerChoice() {
+//     let input = window.prompt('please select a choice: rock, paper, or scissors');
+//     return input.toLowerCase();
+//     };
 
-console.log(playerSelection());
+// console.log(playerSelection());
 
 // function that plays a single round
 
@@ -43,6 +43,10 @@ playRPS(playerSelection(), computerSelection());
 const rockBtn = document.querySelector('.rock');
 const paperBtn = document.querySelector('.paper');
 const scissorsBtn = document.querySelector('.scissors');
+const playerScore = document.querySelector('player-score');
+const computerScore = document.querySelector('computer-score');
+const displayMessage = document.querySelector('display-message');
+
 
 rockBtn.addEventListener('click', () => {
     playRPS('rock', computerSelection());
@@ -56,9 +60,9 @@ scissorsBtn.addEventListener('click', () => {
     playRPS('scissors', computerSelection());
 });
 
+//logic for keeping score
 
-const playerScore = document.querySelector('.player-score');
-const computerScore = document.querySelector('.computer-score')
+if (playRPS().includes('Player wins!')) {
+    div.textContent = 'The winner is Player!' && playerScore++;
+} else div.textContent = 'The winner is Computer!' && computerScore++;
 
-// appendChild??
-// div.textContent = "the winner is ${'...'}"
