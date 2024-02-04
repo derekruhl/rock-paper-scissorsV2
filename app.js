@@ -1,6 +1,6 @@
 // function for computer to randomly select choice
 
-let computerSelection = function getComputerChoice() {
+function getComputerChoice() {
   let computerSelection = Math.floor(Math.random() * 3);
   if (computerSelection == 1) {
     return 'rock';
@@ -8,7 +8,7 @@ let computerSelection = function getComputerChoice() {
     return 'paper';
   } else return 'scissors';
 };
-console.log(computerSelection());
+
 
 // option for player to select choice
 
@@ -34,10 +34,11 @@ function playRPS(playerSelection, computerSelection) {
         return 'Computer wins! scissors beat paper!'
     } else if (playerSelection == 'rock' && computerSelection == 'paper') {
         return 'Computer wins! paper beats rock!'
-    } else 'it\'s a tie'
+    } else { return 'it\'s a tie';
+}
 }
 
-playRPS(playerSelection(), computerSelection());
+// playRPS(playerSelection(), computerSelection());
 
 // UI
 const rockBtn = document.querySelector('.rock');
@@ -52,44 +53,61 @@ let computerScore = 0;
 
 
 rockBtn.addEventListener('click', () => {
-    let result = playRPS('rock', computerSelection());
+    let computerSelection = getComputerChoice();
+    let result = playRPS('rock', computerSelection);
     displayMessage.textContent = result;
 
     //logic for keeping score
 
   if (result.includes('Player wins!')) {
-    displayMessage.textContent = 'The winner is Player!';
-  } else displayMessage.textContent = 'The winner is Computer!';
+    // displayMessage.textContent = 'The winner is Player!';
+    playerScore++;
+  } else if (result.includes('Computer wins!')) {
+    // displayMessage.textContent = 'The winner is Computer!';
+    computerScore++
+  } 
+
+  displayMessage.textContent = result;
 
   updateScore();
 });
 
 paperBtn.addEventListener('click', () => {
-    let result = playRPS('paper', computerSelection());
+    let computerSelection = getComputerChoice();
+    let result = playRPS('paper', computerSelection);
     displayMessage.textContent = result;
 
     //logic for keeping score
 
     if (result.includes('Player wins!')) {
-        displayMessage.textContent = 'The winner is Player!';
-      } else displayMessage.textContent = 'The winner is Computer!';
+        // displayMessage.textContent = 'The winner is Player!';
+        playerScore++
+      } else 
+    //   displayMessage.textContent = 'The winner is Computer!';
+      computerScore++;
+      displayMessage.textContent = result;
 
   updateScore();
 });
 
 scissorsBtn.addEventListener('click', () => {
-    let result = playRPS('scissors', computerSelection());
+    let computerSelection = getComputerChoice();
+    let result = playRPS('scissors', computerSelection);
     displayMessage.textContent = result;
 
     //logic for keeping score
 
     if (result.includes('Player wins!')) {
-        displayMessage.textContent = 'The winner is Player!';
-      } else displayMessage.textContent = 'The winner is Computer!';
+        // displayMessage.textContent = 'The winner is Player!';
+        playerScore++
+      } else 
+    //   displayMessage.textContent = 'The winner is Computer!';
+      computerScore++
+
+      displayMessage.textContent = result;
 
   updateScore();
 });
-
 
 
 function updateScore() {
