@@ -61,10 +61,10 @@ rockBtn.addEventListener('click', () => {
 
   if (result.includes('Player wins!')) {
     // displayMessage.textContent = 'The winner is Player!';
-    playerScore++;
+    return playerScore++;
   } else if (result.includes('Computer wins!')) {
     // displayMessage.textContent = 'The winner is Computer!';
-    computerScore++
+    return computerScore++
   } 
 
   displayMessage.textContent = result;
@@ -81,10 +81,10 @@ paperBtn.addEventListener('click', () => {
 
     if (result.includes('Player wins!')) {
         // displayMessage.textContent = 'The winner is Player!';
-        playerScore++
+        return playerScore++
       } else 
     //   displayMessage.textContent = 'The winner is Computer!';
-      computerScore++;
+      return computerScore++;
       displayMessage.textContent = result;
 
   updateScore();
@@ -99,10 +99,10 @@ scissorsBtn.addEventListener('click', () => {
 
     if (result.includes('Player wins!')) {
         // displayMessage.textContent = 'The winner is Player!';
-        playerScore++
+        return playerScore++
       } else 
     //   displayMessage.textContent = 'The winner is Computer!';
-      computerScore++
+      return computerScore++
 
       displayMessage.textContent = result;
 
