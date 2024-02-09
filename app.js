@@ -34,11 +34,9 @@ function playRPS(playerSelection, computerSelection) {
         return 'Computer wins! scissors beat paper!'
     } else if (playerSelection == 'rock' && computerSelection == 'paper') {
         return 'Computer wins! paper beats rock!'
-    } else { return 'it\'s a tie';
+    } else { return 'it\'s a tie'; 
 }
 }
-
-// playRPS(playerSelection(), computerSelection());
 
 // UI
 const rockBtn = document.querySelector('.rock');
@@ -55,59 +53,42 @@ let computerScore = 0;
 rockBtn.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let result = playRPS('rock', computerSelection);
-    displayMessage.textContent = result;
-
-    //logic for keeping score
-
   if (result.includes('Player wins!')) {
-    // displayMessage.textContent = 'The winner is Player!';
     playerScore++;
   } else if (result.includes('Computer wins!')) {
-    // displayMessage.textContent = 'The winner is Computer!';
     computerScore++
   } 
-
   displayMessage.textContent = result;
-
   updateScore();
-});
+  }
+);
 
 paperBtn.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let result = playRPS('paper', computerSelection);
-    displayMessage.textContent = result;
-
-    //logic for keeping score
-
     if (result.includes('Player wins!')) {
-        // displayMessage.textContent = 'The winner is Player!';
         playerScore++
-      } else 
-    //   displayMessage.textContent = 'The winner is Computer!';
+      } else if (result.includes('Computer wins!')) {
       computerScore++;
+      }
       displayMessage.textContent = result;
-
-  updateScore();
-});
+     updateScore();
+  }
+);
 
 scissorsBtn.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let result = playRPS('scissors', computerSelection);
-    displayMessage.textContent = result;
-
-    //logic for keeping score
-
     if (result.includes('Player wins!')) {
-        // displayMessage.textContent = 'The winner is Player!';
         playerScore++
-      } else 
-    //   displayMessage.textContent = 'The winner is Computer!';
+      } else if (result.includes('Computer wins!')) {
+        
       computerScore++
-
+      }
       displayMessage.textContent = result;
-
-  updateScore();
-});
+    updateScore();
+  }
+);
 
 
 function updateScore() {
